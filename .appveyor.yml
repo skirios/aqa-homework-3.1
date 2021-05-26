@@ -12,8 +12,7 @@ install:
   # запускаем SUT (& означает, что в фоновом режиме - не блокируем терминал для запуска тестов)
   - java -jar ./artifacts/app-order.jar &
   - chmod +x draglew
-  - chmod +x driver/chromedriver
 
 
 build_script:
-  - ./gradlew test --info  # запускаем тест, флаг --info позволяет выводить больше информации
+  - ./gradlew test --info "-Dselenide.headless=true" # запускаем тест, флаг --info позволяет выводить больше информации
